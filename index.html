@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" media="screen" href="stylesheet.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+        <script src="js/app.js"></script>
+        <script src="js/MainController.js"></script>
+    </head>
+
+    <body ng-app="myApp" ng-controller="MainController">
+        <table>
+            <tr ng-repeat="row in array track by $index">
+                <td ng-repeat="col in row track by $index" ng-class="col ? 'red' : 'white'" ng-click="switch($index, $parent.$index)">
+                </td>
+            </tr>
+        </table>
+
+        <button class="btn btn-success" ng-click="start()">Start</button>
+    </body>
+</html>
