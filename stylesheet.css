@@ -4,14 +4,14 @@ html, body {
 }
 table {
 	border-spacing: 0px;
-	width: 90%;
+	width: 80%;
 	height: 100%;
 	float: left;
 }
 button {
 	float: right;
 	margin: 1% !important;
-	width: 7%;
+	width: 15%;
 }
 button:hover {
 	cursor:pointer;
@@ -24,4 +24,9 @@ td {
 }
 .white {
 	background-color: white;
+}
+#dimensionInput {
+	float: right;
+	margin: 1% !important;
+	width: 15%;
 }

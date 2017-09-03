@@ -12,7 +12,7 @@
     <body ng-app="myApp" ng-controller="MainController">
         <table>
             <tr ng-repeat="row in array track by $index">
-                <td ng-repeat="col in row track by $index" ng-class="col ? 'red' : 'white'" ng-click="switch($index, $parent.$index)">
+                <td ng-repeat="col in row track by $index" ng-class="col ? 'red' : 'white'" ng-click="switchAliveOrDead($index, $parent.$index)">
                 </td>
             </tr>
         </table>
