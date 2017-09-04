@@ -18,5 +18,11 @@
         </table>
 
         <button class="btn btn-success" ng-click="start()">Start</button>
+        <button class="btn btn-warning" ng-click="stop()">Stop</button>
+        <button class="btn btn-danger" ng-click="reset()">Reset / Adjust Dimensions</button>
+        <div id="dimensionInput">
+            Rows: <input type="number" value="20" min="1" ng-model="rowNum"/>
+            Columns: <input type="number" value="20" min="1" ng-model="colNum"/>
+        </div>
     </body>
 </html>

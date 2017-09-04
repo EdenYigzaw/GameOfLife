@@ -5,13 +5,6 @@ app.controller('MainController', ['$scope', '$interval', function($scope, $inter
 	$scope.playing = false;
 	$scope.neighbours = 0;
 
-	for (i = 0; i < $scope.rowNum; i++) {
-		$scope.array[i] = [];
-		for (j = 0; j < $scope.colNum; j++) {
-			$scope.array[i][j] = false;
-		}
-	}
-
 	$scope.start = function() {
 		if (!$scope.playing) {
 			$scope.playing = true;
@@ -20,6 +13,26 @@ app.controller('MainController', ['$scope', '$interval', function($scope, $inter
 			}, 500);
 		}
 	};
+
+	$scope.stop = function() {
+		$scope.playing = false;
+		$interval.cancel($scope.interval);
+	};
+
+	$scope.reset = function() {
+		if ($scope.playing) {
+			$scope.stop();
+		}
+		$scope.array = [];
+		for (i = 0; i < $scope.rowNum; i++) {
+			$scope.array[i] = [];
+			for (j = 0; j < $scope.colNum; j++) {
+				$scope.array[i][j] = false;
+			}
+		}
+	};
+
+	$scope.reset();
 
 	$scope.switchAliveOrDead = function(x, y) {
 		if (!$scope.playing) {
