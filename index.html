@@ -19,10 +19,10 @@
 
         <button class="btn btn-success" ng-click="start()">Start</button>
         <button class="btn btn-warning" ng-click="stop()">Stop</button>
-        <button class="btn btn-danger" ng-click="reset()">Reset / Adjust Dimensions</button>
+        <button class="btn btn-danger" ng-click="reset()">Reset</button>
         <div id="dimensionInput">
-            Rows: <input type="number" value="20" min="1" ng-model="rowNum"/>
-            Columns: <input type="number" value="20" min="1" ng-model="colNum"/>
+            Rows: <input type="number" value="20" min="1" max="100" ng-model="rowNum" ng-disabled="playing" ng-change="reset()"/>
+            Columns: <input type="number" value="20" min="1" max="100" ng-model="colNum" ng-disabled="playing" ng-change="reset()"/>
         </div>
     </body>
 </html>
